@@ -1,0 +1,26 @@
+# gitconfig
+[user]
+	email = zbbzucc@gmail.com
+	name = Bangbo Zheng
+[github]
+  user = zbbloveplay
+[color]
+	ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	co = checkout
+	ci = commit -s
+	br = branch
+	st = status
+	up = rebase
+	last = log -1 HEAD
+	unstage = reset HEAD --
+	amend = commit --amend --reuse-message=HEAD
+	n = !git --no-pager
+[core]
+  excludesfile = ~/.gitignore_global
+  editor = nvim

@@ -1,0 +1,10 @@
+.DS_Store
+
+*.swp
+
+.idea/
+
+# project-specific vim configurations
+.vim/coc-settings.json
+
+
