@@ -6,15 +6,15 @@ source $ZSH/oh-my-zsh.sh
 
 # alias
 alias tl="tmux ls"
-alias tnn="tmux new -n"
 alias ta="tmux at"
+alias tn="tmux new -s"
 alias tk="tmux kill-session -t"
-alias tka="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
-alias nv="nvim"
-alias c="clear"
-alias rn="ranger"
-alias t="tree"
 alias lg="lazygit"
+alias R="source $HOME/.zshrc"
+alias c="clear"
+alias t="tree"
+alias n="nvim"
+alias cs="cowsay"
 
 # nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
