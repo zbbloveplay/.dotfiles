@@ -5,3 +5,4 @@
 2. git
 3. ranger
 4. tmux
+5. zsh
