@@ -21,15 +21,17 @@ function err() {
 
 # 链接单独的文件
 function linkfile() {
-  if [[ $# -ne 2 ]]; then
+  if [ $# -ne 2 ]; then
     err "Argument number must be equal 2"
   fi
 
   src=$1
   dst=$2
-  if [[ -e $dst ]]; then
-    
-    #echo "File $dst exist."
+  #echo "src: $src"
+  #echo "dst: $dst"
+  #[ -e $src ] && echo "$src exist" || echo "$src no exist"
+  #[ -L $dst ] && echo "$dst exist" || echo "$dst no exist"
+  if [ -L $dst ] || [ -e $dst ]; then
 
     rm -rf $dst
 
