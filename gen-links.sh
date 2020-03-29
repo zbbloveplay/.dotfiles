@@ -6,7 +6,6 @@ CURRENT_DIR=$(realpath $(dirname "$BASH_SOURCE"))
 # Use array instead of map cause bash < 4 do not supprot
 # associated array
 LINK_PAIRS=(
-    "$CURRENT_DIR/nvim | ~/.config/nvim"
     "$CURRENT_DIR/ranger | ~/.config/ranger"
     "$CURRENT_DIR/tmux/tmux.conf | ~/.tmux.conf"
     "$CURRENT_DIR/git/gitconfig | ~/.gitconfig"
