@@ -10,7 +10,6 @@ LINK_PAIRS=(
     "$CURRENT_DIR/tmux/tmux.conf | ~/.tmux.conf"
     "$CURRENT_DIR/git/gitconfig | ~/.gitconfig"
     "$CURRENT_DIR/git/gitignore_global | ~/.gitignore_global"
-    "$CURRENT_DIR/zsh/zshrc | ~/.zshrc"
 )
 
 function err() {
