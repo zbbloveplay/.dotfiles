@@ -1,0 +1,139 @@
+" -------------------------------------------------------------------------------------------------------------------- "
+" List of Supported Set Commands: https://github.com/JetBrains/ideavim/blob/master/doc/set-commands.md
+" List of All Supported Commands: https://github.com/JetBrains/ideavim/blob/master/src/com/maddyhome/idea/vim/package-info.java
+" -------------------------------------------------------------------------------------------------------------------- "
+
+
+
+" ==
+" == Editor behavior
+" ==
+set number
+set relativenumber
+set cursorline
+set expandtab
+set wrap
+set showcmd
+"set tabstop=2
+"set shiftwidth=2
+"set softtabstop=2
+set showmode
+set hlsearch
+exec "nohlsearch"
+set incsearch
+set ignorecase
+set smartcase
+
+" ==
+" == Basic Mappings
+" ==
+let mapleader=" "
+"map ; :
+
+" Save & quit
+map Q :q<CR>
+
+" Search
+noremap = nzz
+noremap - Nzz
+map <LEADER><CR> :nohlsearch<CR>
+
+" ===
+" === Cursor Movement
+" ===
+noremap K 5k
+noremap J 5j
+
+" ===
+" === Windows management
+" ===
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
+nnoremap <c-k> <c-w>k
+nnoremap <a-h> gT
+nnoremap <a-l> gt
+nnoremap <a-h> gT
+nnoremap <a-l> gt
+
+" Disabling the default 's' key
+map s <nop>
+
+" split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
+map sl :set splitright<CR>:vsplit<CR>
+map sh :set nosplitright<CR>:vsplit<CR>
+map sj :set splitright<CR>:split<CR>
+map sk :set nosplitright<CR>:split<CR>
+
+map <up> <Nop>
+map <down> <Nop>
+map <left> <Nop>
+map <right> <Nop>
+
+" Press <SPACE> + q to close the window below the current window
+" noremap <LEADER>q <C-w>j:q<CR>
+
+" ===
+" === Other useful stuff
+" ===
+" find and replace
+noremap \s :%s//g<left><left>
+
+" easy system clipboard copy/paste
+noremap <LEADER>y "*y
+noremap <LEADER>Y "*Y
+noremap <LEADER>p "*p
+noremap <LEADER>P "*P
+
+" options
+nnoremap cow :action EditorToggleUseSoftWraps<cr>
+nnoremap col :action EditorToggleShowWhiteLEADERs<cr>
+
+" actions
+nnoremap <LEADER>q :action CloseContent<cr>
+nnoremap <LEADER>Q :action ReopenClosedTab<cr>
+nnoremap <LEADER>\ :action VimFilePrevious<cr>
+nnoremap <LEADER>e :action SearchEverywhere<cr>
+nnoremap <LEADER>E :action Switcher<cr>
+nnoremap <LEADER>t :action FileStructurePopup<cr>
+nnoremap <LEADER>T :action GotoSymbol<cr>
+nnoremap <LEADER>a :action GotoAction<cr>
+nnoremap <LEADER>b :action ToggleLineBreakpoint<cr>
+
+" code navigation
+nnoremap <LEADER>] :action GotoImplementation<cr>
+nnoremap <LEADER>[ :action GotoSuperMethod<cr>
+nnoremap <LEADER>u :action FindUsages<cr>
+nnoremap <LEADER>gt :action GotoTest<cr>
+nnoremap <LEADER>k :action HighlightUsagesInFile<cr>
+nnojemap \r :action RunClass<cr>
+nnoremap \R :action Run<cr>
+nnoremap \d :action DebugClass<cr>
+nnoremap \D :action Debug<cr>
+nnoremap \c :action CheckStyleCurrentFileAction<cr>
+
+" code refactoring
+nnoremap <LEADER>rr :action RenameElement<cr>
+
+" unimpaired mappings
+nnoremap [<LEADER> O<esc>j
+nnoremap ]<LEADER> o<esc>k
+nnoremap [q :action PreviousOccurence<cr>
+nnoremap ]q :action NextOccurence<cr>
+nnoremap [m :action MethodUp<cr>
+nnoremap ]m :action MethodDown<cr>
+nnoremap [c :action VcsShowPrevChangeMarker<cr>
+nnoremap ]c :action VcsShowNextChangeMarker<cr>
+
+" built-in navigation to navigated items works better
+nnoremap <c-o> :action Back<cr>
+nnoremap <c-i> :action Forward<cr>
+" but preserve ideavim defaults
+nnoremap g<c-o> <c-o>
+nnoremap g<c-i> <c-i>
+
+" built in search looks better
+"nnoremap / :action Find<cr>
+" but preserve ideavim search
+nnoremap g/ /
+"nnoremap g/ :action Find<cr>
